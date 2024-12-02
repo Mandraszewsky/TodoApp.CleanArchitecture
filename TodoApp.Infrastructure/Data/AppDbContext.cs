@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TodoApp.Domain.Entities;
+using TodoApp.Infrastructure.Configurations;
 
 namespace TodoApp.Infrastructure.Data;
 
@@ -14,4 +15,12 @@ public class AppDbContext : DbContext
     public DbSet<ToDoList> ToDoLists { get; set; }
     public DbSet<ToDoItem> ToDoItems { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
+        modelBuilder.ApplyConfiguration(new ToDoListConfiguration());
+        modelBuilder.ApplyConfiguration(new ToDoItemConfiguration());
+
+        base.OnModelCreating(modelBuilder);
+    }
 }
