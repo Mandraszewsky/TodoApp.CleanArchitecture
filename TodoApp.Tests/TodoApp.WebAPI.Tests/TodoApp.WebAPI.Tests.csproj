@@ -16,4 +16,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\TodoApp.Application\TodoApp.Application.csproj" />
+    <ProjectReference Include="..\..\TodoApp.Domain\TodoApp.Domain.csproj" />
+    <ProjectReference Include="..\..\TodoApp.Infrastructure\TodoApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\TodoApp.WebAPI\TodoApp.WebAPI\TodoApp.WebAPI.csproj" />
+  </ItemGroup>
+
 </Project>
